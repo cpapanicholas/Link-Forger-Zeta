@@ -60,10 +60,30 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+    return writeFileAsync(fileName, data);
+  }
 
 // TODO: Create a function to initialize app
-function init() {}
+
+async function init() {
+    try {
+      const answers = await inquirer.prompt(questions);
+  
+      // Create the README content based on user input
+      const readmeContent = generateReadme(answers);
+  
+      // Define the filename for the generated README
+      const readmeFileName = 'README.md';
+  
+      // Write the README file
+      await writeToFile(readmeFileName, readmeContent);
+  
+      console.log(`Successfully generated ${readmeFileName}`);
+    } catch (error) {
+      console.error('An error occurred:', error);
+    }
+  }
 
 // Function call to initialize app
 init();
