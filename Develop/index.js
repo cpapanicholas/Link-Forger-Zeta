@@ -12,30 +12,39 @@ inquirer
 const questions = [
     {
         type: 'input',
+        name: 'title',
     },
     {
         type: 'input',
+        name: 'description',
     },
     {
         type: 'input',
+        name: 'installation',
     },
     {
         type: 'input',
+        name: 'usage',
     },
     {
         type: 'input',
+        name: 'contributions',
     },
     {
         type: 'input',
+        name: 'license',
     },
     {
         type: 'input',
+        name: 'githubUsername',
     },
     {
         type: 'input',
+        name: 'email',
     },
     {
         type: 'input',
+        name: '',
     },
 
 ];
