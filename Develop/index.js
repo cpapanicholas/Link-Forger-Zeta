@@ -85,5 +85,41 @@ async function init() {
     }
   }
 
+  function generateReadme(answers) {
+    return `
+  # ${answers.title}
+  
+  ## Description
+  ${answers.description}
+  
+  ## Table of Contents
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Contributing](#contributing)
+  - [Tests](#tests)
+  - [License](#license)
+  - [Questions](#questions)
+  
+  ## Installation
+  ${answers.installation}
+  
+  ## Usage
+  ${answers.usage}
+  
+  ## Contributing
+  ${answers.contributing}
+  
+  ## Tests
+  ${answers.tests}
+  
+  ## License
+  This project is licensed under the ${answers.license} License${answers.license === 'Other' ? ` (${answers.licenseOther})` : ''}.
+  
+  ## Questions
+  - GitHub: [${answers.githubUsername}](https://github.com/${answers.githubUsername})
+  - Email: ${answers.email}
+    `;
+  }
+
 // Function call to initialize app
 init();
