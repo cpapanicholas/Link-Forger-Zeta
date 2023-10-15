@@ -1,13 +1,13 @@
 // TODO: Include packages needed for this application
-var inquirer = require('inquirer')
-inquirer
-.prompt({
+const inquirer = require('inquirer');
+const fs = require('fs');
+const util = require('util');
 
-})
-.then(answers => {
+const writeFileAsync = util.promisify(fs.writeFile);
 
 
-});
+
+
 // TODO: Create an array of questions for user input
 const questions = [
     {
@@ -54,7 +54,8 @@ const questions = [
     },
     {
         type: 'input',
-        name: '',
+        name: 'tests',
+        message: 'Enter your tests:'
     },
 
 ];
@@ -87,7 +88,7 @@ async function init() {
 
   function generateReadme(answers) {
     return `
-  # ${answers.title}
+  # ${answers.title} 
   
   ## Description
   ${answers.description}
